@@ -1,0 +1,280 @@
+<!DOCTYPE html> {% load pwa %}{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- account and profile dropdown menu -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    {% progressive_web_app_meta %}
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <section class="navbar">
+        <div class="uppernav">
+
+            <a href="https://flowbite.com/" class="flex items-center m-3 mb-4 sm:mb-0 mr-8">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">S.M_FIROZ</span>
+            </a>
+
+            <div class="navSearch">
+                <!-- <input type="text" id="keyword" class="searchContainer" placeholder="Try Saree,Kurthi or Seach by Product Code" /> -->
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1">
+                        <button type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Try Saree,Kurthi or Seach by Product Code" aria-describedby="sizing-addon1">
+                </div>
+            </div>
+
+            <div class="navRightSec">
+                <div class="navProfile" id="avatarButton" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer">
+                    <img src="https://i.postimg.cc/wjtLkcVz/user.png" alt="account" class="navAccountIcon" />
+                    <span class="SignUpHover">Profile</span>
+                </div>
+                <div class="navcart" onclick="window.location.href='CartPage.html'">
+                    <img src="https://i.postimg.cc/sXBgkwMf/bag.png" alt="cart" class="cartIcon" />
+                    <span class="SignUpHover" onclick="window.location.href='CartPage.html'">Cart</span>
+                </div>
+                <div id="cart-item-counter">0</div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Dropdown menu for profile -->
+        <div id="userDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+
+                <div>S.M_firoz</div>
+                <div class="font-medium truncate">shaikhfiroz595@gmail.com</div>
+            </div>
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+            </ul>
+            <div class="py-1">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                    out</a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- all products  -->
+
+
+
+
+
+        <!-- bottom menu bar -->
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <nav class="nav">
+            <a href="#" class="nav__link">
+                <i class="material-icons nav__icon">home</i>
+                <span class="nav__text">Home</span>
+            </a>
+            <a href="#" class="nav__link ">
+                <span class="material-symbols-outlined">
+                    view_cozy
+                </span>
+                <span class="nav__text">Categories</span>
+            </a>
+            <a href="#" class="nav__link">
+                <span class="material-symbols-outlined">
+                    shopping_bag
+                </span>
+                <span class="nav__text">My Orders</span>
+            </a>
+            <a href="{% url 'buyer_help' %}" class="nav__link">
+                <i class="material-icons nav__icon">help</i>
+                <span class="nav__text">Help</span>
+            </a>
+            <button type="button" href="#" class="nav__link" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                <i class="material-icons nav__icon">person</i>
+                <span class="nav__text">Account</span>
+            </button>
+        </nav>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Account side bar -->
+        <div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-70 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+            <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+                account
+            </h5>
+            <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+            <div class="py-4 overflow-y-auto">
+                <ul class="space-y-2 font-medium">
+                    <li>
+                        <a href="file:///D:/Project-faiz/components/ACCOUNTS/profileupdate.html" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                            <div class="flex items-center space-x-4 mr-8">
+
+                                <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                    <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="font-medium dark:text-white">
+                                    <div class="text-lg text-gray-500 dark:text-gray-400">9004624286</div>
+                                </div>
+
+                            </div>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class=" h-7 w-7 " aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'buyer_help' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+
+                            </svg>
+                            <span class="ml-3">Help Center</span>
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                            <svg aria-hidden="true"
+                                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="flex-1 ml-3 text-left whitespace-nowrap">My Bank & UPI Details</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                            <li>
+                                <h3 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                    Bank Details <a href="{% url 'buyer_add_bank_details' %}" class="ml-4 text-danger"> ADD
+
+                                    </a>
+                                </h3>
+
+                            </li>
+                            <li>
+                                <h3 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                    UPI Details <a href="{% url 'buyer_add_upi' %}" class="ml-6 text-danger"> ADD
+
+                                    </a>
+                                </h3>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'buyer_my_payments' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                                </path>
+                                <path
+                                    d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                                </path>
+                            </svg>
+                            <span class="flex-1 ml-3 whitespace-nowrap">My Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'buyer_spin_reward' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Spins</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'buyer_logout' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <footer class="bg-white rounded-lg dark:bg-gray-900 mx-auto">
+                    <div class="w-full max-w-screen-xl mx-auto m-4 p-8 md:py-8">
+                        <img src="https://cdn.hevodata.com/customer/logo/8c76f62bd88177a78bb6e2810a244446.png" alt="logo" class="logo" />
+                        <span class="block text-sm text-gray-500 mt-6 sm:text-center dark:text-gray-400">Version:
+                            15.2(476)
+                        </span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+</body>
+
+</html>

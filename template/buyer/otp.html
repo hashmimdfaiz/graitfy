@@ -1,0 +1,40 @@
+<!DOCTYPE html>{% load pwa %}{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP page</title>
+    <link rel="stylesheet" href="{% static 'css/otp.css' %}"> {% progressive_web_app_meta %}
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="post">
+            <div class="center_div">
+                <h2>Enter OTP sent to 900****286</h2>
+                <a href="{% url 'buyer_login' %}"> change number</a>
+                <br>
+                <input type="text" maxlength="5" required minlength="5">
+                <br>
+                <a href="#"> resend otp</a><button type="submit" class="test" id="sixth">Verify</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    var elts = document.getElementsByClassName('test')
+    Array.from(elts).forEach(function(elt) {
+        elt.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            // window.alert(event.keyCode)
+            if (event.keyCode === 13 || elt.value.length == 1) {
+                // Focus on the next sibling
+                elt.nextElementSibling.focus()
+            }
+        });
+    })
+</script>
+
+</html>
