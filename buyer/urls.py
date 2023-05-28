@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from buyer.views.index import Homepage, Spin_reward
 from buyer.views.profile import Profile, Help, Add_bank_details, Add_upi, My_payments
 from buyer.views.login import Login, Otp, Logout
-from buyer.views.cart import Cart
+from buyer.views.cart import Cart, Place_order, Payment_order_place
 # from seller.urls import
 
 urlpatterns = [
@@ -36,6 +36,8 @@ urlpatterns = [
     path('my_payments/',My_payments.as_view(),name = 'buyer_my_payments'),
     path('spin_reward/',Spin_reward.as_view(),name = 'buyer_spin_reward'),
     path('cart/',Cart.as_view(),name = 'buyer_cart'),
+    path('place_order/',Place_order.as_view(),name = 'buyer_place_order'),
+    path('order_payment_details/',Payment_order_place.as_view(),name = 'buyer_payment_place_order'),
     path('logout/',Logout.as_view(),name = 'buyer_logout'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

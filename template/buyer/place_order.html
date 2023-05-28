@@ -1,0 +1,223 @@
+<!DOCTYPE html>{% load pwa %}{% load static %}
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css" rel="stylesheet" />
+    <!-- flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    {% progressive_web_app_meta %}
+
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 17px;
+            padding: 8px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+        
+        .col-25 {
+            -ms-flex: 25%;
+            /* IE10 */
+            flex: 25%;
+        }
+        
+        .col-50 {
+            -ms-flex: 50%;
+            /* IE10 */
+            flex: 50%;
+        }
+        
+        .col-75 {
+            -ms-flex: 75%;
+            /* IE10 */
+            flex: 75%;
+        }
+        
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+        
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+        
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        
+        .btn:hover {
+            background-color: #45a049;
+        }
+        
+        a {
+            color: #2196F3;
+        }
+        
+        hr {
+            border: 1px solid lightgrey;
+        }
+        
+        span.price {
+            float: right;
+            color: grey;
+        }
+        
+        @media (max-width: 800px) {
+            .row {
+                flex-direction: column-reverse;
+            }
+            .col-25 {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+            <li class="mr-2" role="presentation">
+                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="border: #800080 2px solid;color: #800080;"> ORDER DETAILS</button>
+            </li>
+        </ul>
+    </div>
+    <div id="myTabContent">
+        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row">
+                <div class="col-75">
+                    <div class="container">
+                        <form>
+
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                    <input type="text" id="fname" name="firstname" placeholder="shaikh firoz">
+                                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                    <input type="text" id="email" name="email" placeholder="firoz@example.com">
+                                    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                    <label for="city"><i class="fa fa-institution"></i> City</label>
+                                    <input type="text" id="city" name="city" placeholder="mumbai">
+
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label for="state">State</label>
+                                            <input type="text" id="state" name="state" placeholder="maharashtra">
+                                        </div>
+                                        <div class="col-50">
+                                            <label for="zip">Pin Code</label>
+                                            <input type="text" id="zip" name="zip" placeholder="400017">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header py-3">
+                                            <h5 class="mb-0">Price Details</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                                    Product Name
+                                                    <span>Shirt</span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                                    Price (1 item)
+                                                    <span>₹499.00</span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                                    Delivery Charges
+                                                    <span>Free Delivery</span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                                    <div>
+                                                        <strong>Total amount</strong>
+                                                        <strong>
+                                                            <p class="mb-0"></p>
+                                                        </strong>
+                                                    </div>
+                                                    <span><strong>₹499.00</strong></span>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="{% url 'buyer_payment_place_order' %}" class="btn mb-2 btn-primary btn-lg btn-block" style="color: white; text-decoration: none; background-color: #800080;">CONTINUE
+                                <button type="button" class="">
+                                </button>
+                            </a>
+
+                            <a href="{% url 'buyer_homepage' %}" class="btn mb-2 btn-primary btn-lg btn-block" style="color: white; text-decoration: none; background-color: #800080;">Back to Home
+                                <button type="button" class="">
+                                </button>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

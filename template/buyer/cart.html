@@ -15,9 +15,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css" rel="stylesheet" />{% progressive_web_app_meta %}
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 </head>
 
 <body style="padding: 20px;">
+
     <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
             <li class="mr-2" role="presentation">
@@ -63,7 +65,7 @@
 
                                         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                             <div class="d-flex mb-4" style="max-width: 300px">
-                                                <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <button class="btn btn-primary px-3 me-2" style="background-color: #800080;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                                     <i class="fas fa-minus"></i>
                                                 </button>
 
@@ -71,7 +73,7 @@
                                                     <input min="1" name="quantity" value="1" type="number" class="form-control" />
                                                 </div>
 
-                                                <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <button class="btn btn-primary px-3 ms-2" style="background-color: #800080;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
                                             </div>
@@ -99,22 +101,22 @@
                                             <p>Color: red</p>
                                             <p>Size: M</p>
 
-                                            <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
+                                            <button type="button" class="btn btn-primary btn-sm me-1 mb-2" style="background-color: #800080;" data-mdb-toggle="tooltip" title="Remove item">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </div>
 
                                         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                             <div class="d-flex mb-4" style="max-width: 300px">
-                                                <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <button class="btn btn-primary px-3 me-2" style="background-color: #800080;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                                     <i class="fas fa-minus"></i>
                                                 </button>
 
                                                 <div class="form-outline">
-                                                    <input min="1" name="quantity" value="1" type="number" style="" class="form-control" />
+                                                    <input min="1" name="quantity" value="1" type="number" class="form-control" />
                                                 </div>
 
-                                                <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <button class="btn btn-primary px-3 ms-2" style="background-color: #800080;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
                                             </div>
@@ -153,11 +155,13 @@
                                         </li>
                                     </ul>
 
-                                    <button type="button" style="background-color: #f43397;" class="btn mb-2 btn-primary btn-lg btn-block">
-                                        Buy Now
-                                    </button>
+                                    <a href="{% url 'buyer_place_order' %}" class="btn mb-2 btn-primary btn-lg btn-block" style="color: white; text-decoration: none; background-color: #800080;">Buy Now
+                                        <button type="button" class="">
+                                        </button>
+                                    </a>
+
                                     <a href="D:\Project-faiz\components\HOME PAGES\home.html" class="">
-                                        <button type="button" style="background-color: #f43397;" class="btn btn-primary btn-lg btn-block">
+                                        <button type="button" style="background-color: #800080;" class="btn btn-primary btn-lg btn-block">
                                             Back
                                         </button>
                                     </a>
