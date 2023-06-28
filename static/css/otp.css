@@ -27,7 +27,7 @@ body {
     color: #800080;
     text-transform: uppercase;
     text-decoration: none;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .userInput {
@@ -39,9 +39,9 @@ input {
     margin: 10px 0px;
     height: 35px;
     /* width: 65px; */
-    border: none;
+    /* border: none; */
     border-radius: 5px;
-    text-align: center;
+    /* text-align: center; */
     font-family: arimo;
     font-size: 1.2rem;
     background: #eef2f3;

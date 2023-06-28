@@ -1,4 +1,4 @@
-<html lang="en">{% load pwa %}{% load static %}
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -14,19 +14,26 @@
     <!-- flowbite -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-    {% progressive_web_app_meta %}
 </head>
 
-<body style="padding: 20px;">
+<body>
     <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent"
+            role="tablist">
             <li class="mr-2" role="presentation">
-                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="border: #800080 2px solid;color: #800080;">PAYMENT</button>
+                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile"
+                    type="button" role="tab" aria-controls="profile" aria-selected="false">PAYMENT</button>
             </li>
         </ul>
     </div>
     <div id="myTabContent">
-        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
+            aria-labelledby="profile-tab">
+
+
+
+
+
             <div class=" col-40">
                 <div class="card mb-4">
                     <div class="card-header py-3">
@@ -34,11 +41,9 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                Product Name
-                                <span>Shirt</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                 Price (1 item)
                                 <span>₹499.00</span>
                             </li>
@@ -46,7 +51,8 @@
                                 Delivery Charges
                                 <span>Free Delivery</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                 <div>
                                     <strong>Total amount</strong>
                                     <strong>
@@ -59,6 +65,8 @@
 
                     </div>
                 </div>
+
+
                 <div class="card mb-4">
                     <div class="card-header py-3">
                         <h5 class="mb-0">Select Payment Method</h5>
@@ -66,22 +74,26 @@
                     <form>
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                     <div><i class="fa-solid fa-wallet" style="color: green;"></i> Cash On Delivery</div>
                                     <span><input type="radio" name="payment" /></span>
                                 </li>
-                                <hr/>
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                            <hr/>
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                     <div><i class="fas fa-money-check" style="color: green;"> </i> Online</div>
                                     <span><input type="radio" name="payment" /></span>
                                 </li>
                             </ul>
-                            <a href="./ordersummary.html" class="btn mb-2 btn-primary btn-lg btn-block" style="color: white; text-decoration: none; background-color: #800080;">PROCEED
+                            <a href="./ordersummary.html" class="btn mb-2 btn-primary btn-lg btn-block"
+                                style="color: white; text-decoration: none; background-color: #800080;">PROCEED
                                 <button type="button" class="">
                                 </button>
                             </a>
 
-                            <a href="./order_details.html" class="btn mb-2 btn-primary btn-lg btn-block" style="color: white; text-decoration: none; background-color: #800080;">BACK
+                            <a href="./order_details.html" class="btn mb-2 btn-primary btn-lg btn-block"
+                                style="color: white; text-decoration: none; background-color: #800080;">BACK
                                 <button type="button" class="">
                                 </button>
                             </a>

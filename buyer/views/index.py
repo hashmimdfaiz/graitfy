@@ -12,3 +12,8 @@ class Spin_reward(View):
         return render(request,'buyer/spin_reward.html')
     def post(self,request):
         return render(request,'buyer/spin_reward.html')
+class Categories(View):
+    def get(self,request):
+        return render(request,'buyer/categories.html')
+    def post(self,request):
+        return render(request,'buyer/categories.html')

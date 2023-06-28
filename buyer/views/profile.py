@@ -3,6 +3,7 @@ from django.views import View
 
 # Create your views here.
 class Profile(View):
+
     def get(self,request):
         return render(request,'buyer/profileupdate.html')
     def post(self,request):

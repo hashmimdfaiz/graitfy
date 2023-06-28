@@ -11,19 +11,65 @@
 
 <body>
     <div class="container">
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return form_validation()">{% csrf_token %}
             <div class="center_div">
                 <h2>Enter OTP sent to 900****286</h2>
                 <a href="{% url 'buyer_login' %}"> change number</a>
                 <br>
-                <input type="text" maxlength="5" required minlength="5">
+                <input type="number" id="otp" required name="otp" value="">
                 <br>
-                <a href="#"> resend otp</a><button type="submit" class="test" id="sixth">Verify</button>
+                <span class="mb-4" style="color: red; font-size: 15px;display: none;" id="validate_1">Enter
+                    correct OTP Number</span>
+                <div class="form-group mt-4">
+                    <input type="text" id="timy" value="90" hidden>
+                    <p id="countdown" style="color: red; visibility: hidden;"></p>
+                    <!-- <input type="text" id="timi" value="{{time_2}}" hidden> -->
+                </div>
+                <a href="#" id="resend_button" style="display: none;"> resend otp</a><button type="submit" class="test" id="submit_button">Verify</button>
             </div>
         </form>
     </div>
 </body>
 <script>
+    function form_validation() {
+        const phone_no = document.getElementById('otp').value;
+        if (phone_no.length <= 4) {
+            // window.alert('no value hai');
+            document.getElementById('validate_1').style.display = 'block';
+            return false
+        } else {
+            // window.alert('good')
+            return true
+        }
+    }
+    const get_time = document.getElementById('timy').value;
+    console.log(get_time);
+    if (get_time) {
+        document.getElementById('countdown').style.visibility = "visible";
+        const final_time = get_time / 60;
+        console.log(final_time)
+        const starting_Minutes = final_time;
+        let time = starting_Minutes * 60;
+        const countdownEL = document.getElementById('countdown');
+        setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            const minutes = '0' + Math.floor(time / 60);
+            let seconds = time % 60.0;
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            countdownEL.innerHTML = `Next OTP SEND in ${minutes} : ${seconds}`;
+            time--;
+            if (time == 0) {
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("resend_button").style.display = "block";
+                document.getElementById("submit_button").style.display = "none";
+
+            }
+        }
+    }
+
     var elts = document.getElementsByClassName('test')
     Array.from(elts).forEach(function(elt) {
         elt.addEventListener("keyup", function(event) {

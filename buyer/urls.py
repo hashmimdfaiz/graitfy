@@ -18,10 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from buyer.views.index import Homepage, Spin_reward
+from buyer.views.index import Homepage, Spin_reward, Categories
 from buyer.views.profile import Profile, Help, Add_bank_details, Add_upi, My_payments
 from buyer.views.login import Login, Otp, Logout
-from buyer.views.cart import Cart, Place_order, Payment_order_place
+from buyer.views.cart import Cart, Place_order, Payment_order_place, My_order
 # from seller.urls import
 
 urlpatterns = [
@@ -29,7 +29,7 @@ urlpatterns = [
     path('profile/',Profile.as_view(),name = 'buyer_profile'),
     path('signup/',Homepage.as_view(),name = 'buyer_signup'),
     path('login/',Login.as_view(),name = 'buyer_login'),
-    path('otp/',Otp.as_view(),name = 'buyer_otp'),
+    path('otp/<str:user_type>',Otp.as_view(),name = 'buyer_otp'),
     path('help/',Help.as_view(),name = 'buyer_help'),
     path('addbankdetails/',Add_bank_details.as_view(),name = 'buyer_add_bank_details'),
     path('addupi/',Add_upi.as_view(),name = 'buyer_add_upi'),
@@ -38,6 +38,9 @@ urlpatterns = [
     path('cart/',Cart.as_view(),name = 'buyer_cart'),
     path('place_order/',Place_order.as_view(),name = 'buyer_place_order'),
     path('order_payment_details/',Payment_order_place.as_view(),name = 'buyer_payment_place_order'),
+    # path('order_payment_details/',Payment_order_place.as_view(),name = 'buyer_payment_place_order'),
+    path('my_orders/',My_order.as_view(),name = 'buyer_my_order'),
+    path('categories/',Categories.as_view(),name = 'buyer_categories'),
     path('logout/',Logout.as_view(),name = 'buyer_logout'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

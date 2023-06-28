@@ -17,3 +17,8 @@ class Payment_order_place(View):
         return render(request,'buyer/payment_place_order.html')
     def post(self,request):
         return render(request,'buyer/payment_place_order.html')
+class My_order(View):
+    def get(self,request):
+        return render(request,'buyer/ordersummary.html')
+    def post(self,request):
+        return render(request,'buyer/ordersummary.html')
